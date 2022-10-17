@@ -1,0 +1,15 @@
+/* css reset*/
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none; 
+}
+@import "base/mixins";
+@import "base/import";
+html {
+    scroll-behavior: smooth; /*para suavizar el scroll*/
+}
+body {
+    font-family: sans-serif;
+}

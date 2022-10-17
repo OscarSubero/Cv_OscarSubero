@@ -1,0 +1,35 @@
+// Inicio estilos del footer
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    @include dimension(100%, 5vh);
+    @include displayFlexA (wrap, center);
+    background: black;
+    ul {
+        @include displayFlexB (nowrap, center, space-between);
+        li {
+            @include displayFlexB (nowrap, center, space-around);
+            justify-content: space-around;
+            a {
+                color:white;
+            }
+        }
+    }
+    .footer-contact {
+        min-width: 3em;
+        color: white;
+        font-size: 1.6em;
+    }
+    .footer-social {
+        min-width: 6em;
+        font-size: 1.4em;
+    }
+    .footer-social-element {
+        &:hover {
+            transform: scale(1.05) translateY(-0.3em);
+            transition: 0.3s;            
+        }
+    }
+}
+// Fin estilos del footer

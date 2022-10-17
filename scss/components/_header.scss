@@ -1,0 +1,201 @@
+// Inicio estilos menú barra
+.nav-bar {
+    position:relative;
+    top: 0;
+    left: 0;
+    @include dimension(100%, 5vh);
+    @include displayFlexB (nowrap, center, space-between);
+    background-color: black;
+    a {
+        color:white;
+    }
+    .nav-bar-home {
+        @include dimension(auto, 100%);
+        @include displayFlexB (nowrap, center, center);
+        padding-left: 2em;
+        &:hover li{
+            @include dimension(6.7em, 2.75em);
+            transform: scale(1.06);
+        }
+        li {
+            @include dimension(2.5em, 2.75em);
+            @include displayFlexA (nowrap, center);
+            overflow:hidden;
+            transition-timing-function: linear;
+            transition: 0.3s;
+            a {
+                text-align: center;
+                white-space: nowrap;
+                transition-timing-function: linear;
+                transition: 0.3s;
+            }           
+             &:hover a{
+                text-decoration:dashed;
+                 margin-left: -2.5em;
+            }
+            &:hover:before{
+                border: solid;
+                border-color: white;
+                border-width:0.3em;
+                border-radius: 0.3em;
+                content: "";
+                left: 45%;
+                top: 2em;
+                position:absolute;
+            }
+        }
+    }
+    .nav-bar-detail {
+        height: 100%;
+        padding-right: 2em;
+        min-width: 10em;
+        @include displayFlexB (nowrap, center, space-around);
+        li {
+            &:hover {
+                transform: scale(1.05) translateY(-0.3em);
+                transition: 0.3s;            
+            }
+            &:hover:before{
+                border: solid;
+                border-color: white;
+                border-width:0.3em;
+                border-radius: 0.3em;
+                content: "";
+                left: 45%;
+                top: 1.3em;
+                position:absolute;
+            }
+        }
+    }
+}
+// Fin estilos menú barra
+// Inicio estilos menú hamburguesa
+.nav-burguer{
+    position: fixed;
+    background: black;
+    @include dimension(3em, 3em);
+    border-radius: 5em;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    cursor: pointer;
+    border: 1em solid rgb(46, 44, 44);
+    z-index: 4;
+    &:after {
+        content: "";
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        @include dimension(1em, 0.2em);
+        border-top: 0.6em double #fff;
+        border-bottom: 0.2em solid #fff;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            @include dimension(5.5em, 1.4em);
+            padding: 0.2em;
+            margin-top: 0.2em;
+            text-align: center;
+            border-top-right-radius: 0.5em;
+            border-bottom-right-radius: 0.5em;
+            transition: all 1s;
+            background: rgb(46, 44, 44);
+            opacity: 0;
+            z-index: -1;
+        }
+    }
+
+    &:hover li {
+        opacity: 1;
+    }
+    /**
+    Se añadirá un pseudo elemento para cubrir el espacio entre los enlaces.
+    De esta manera el menú no pierde el focus y no desaparece durante el hover
+     */
+    &:hover ul::before {
+        position: absolute;
+        content: "";
+        @include dimension(0, 0);
+        display: block;
+        left: 50%;
+        top: -5.0em;
+        /**
+        El pseudo elemento es un semi círculo
+        */
+        border-width: 6.5em;
+        border-radius: 0 7.5em 7.5em 0;
+        border-left: 0;
+        border-style: solid;
+        /**
+        Debe temer un border-color para el borde para que pueda hacerse hover.
+        Uso un color muy transparente para que sea invisible
+        */
+        // border-color: rgba(27, 23, 23, 0.01);
+        border-color: rgba(27, 23, 23, 0.01);
+        /**
+        * Se coloca el pseudo elemento delante de los enlaces para que se pueda hacer click
+        sobre ellos
+        */
+        z-index: -1;
+        /**
+        * Se coloca el cursor por defecto para que luzca que no hay nada
+        */
+        cursor: default;
+    }
+    ul {
+        transform: rotate(180deg) translateY(-2em);
+        transition: 1s all;
+        li {
+            a {
+                color: white;
+                line-height: 1.5em;
+            }
+            &:hover {
+                background: black;
+                z-index: 10;
+            }
+            
+            &:nth-of-type(1) {
+                transform: rotate(-45deg);
+                position: absolute;
+                left: 2.3em;
+                top: -2.2em;
+            }
+            &:nth-of-type(2) {
+                transform: rotate(-13deg);
+                position: absolute;
+                left: 3.8em;
+                top: 0.3em;
+            }
+            &:nth-of-type(3) {
+                transform: rotate(22deg);
+                position: absolute;
+                left: 3.5em;
+                top:3.2em;
+                // top: 0.3em;
+            }
+            &:nth-of-type(4) {
+                transform: rotate(52deg);
+                position: absolute;
+                left: 1.7em;
+                top: 5.4em;
+            }  
+        }
+    }
+    &:hover ul {
+        transform: rotate(0deg) translateY(-1em);
+    }
+}
+.nav-burguer-hide {
+    opacity:0;
+    height: 0;
+    width: 0;
+    transition: all 0.4s;
+}
+.nav-burguer-show {
+    opacity:1; 
+    transition: all 0.4s;
+}
+// Fin estilos menú hambuguesa
+

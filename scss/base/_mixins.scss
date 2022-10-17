@@ -1,0 +1,34 @@
+@mixin transition($transition-property, $transition-time, $method) {
+    transition: $transition-property $transition-time $method;
+}
+@mixin dimension($width, $height) {
+    width: $width;
+    height: $height;
+}
+@mixin displayFlexA($wrap, $align-items) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $align-items;
+}
+@mixin displayFlexB($wrap, $align-items, $justify-content) {
+    display: flex;
+    flex-wrap: $wrap;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+@mixin displayFlexC($wrap, $justify-content) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify-content;
+}
+@mixin backgroundImage($image) {
+    background-image: $image;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+@mixin backgroundBorder($background-color, $border, $border-radius) {
+    background-color: $background-color;
+    border: $border;
+    border-radius: $border-radius;
+}

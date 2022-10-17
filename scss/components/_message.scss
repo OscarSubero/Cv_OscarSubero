@@ -1,0 +1,42 @@
+//Comienzo estilos mensaje enviado
+.message-container {
+    @include backgroundImage(url(../image/messages-floating-laptop.jpg));
+    min-height: 100vh;
+    @include displayFlexB (wrap, center, center);
+    .message-sent {
+        @include displayFlexB (nowrap, center, space-between);
+        flex-direction: column;
+        height: 13em;
+        .message-title {
+            @include displayFlexB (wrap, center, center);
+            p {
+                color: black;
+                font-size: 3em;
+            }
+        }
+        .message-return {
+            @include dimension(4.5em, 2.5em);
+            @include backgroundBorder (black, 0.5em solid rgb(46, 44, 44), 0.5em);
+            @keyframes reboot_move {
+                from { transform: translate3d(0, 0, 0);}
+                to { transform: translate3d(0, 0.3em, 0);}
+            }
+            &:hover {
+                cursor: pointer;
+                animation: reboot_move 0.3s;
+                animation-direction: alternate;
+                animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+                animation-iteration-count: 4;
+            }
+            a {
+                @include dimension(100%, 100%);
+                @include displayFlexB (wrap, center, center);
+                color:#fff;
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
+//Fin estilos mensaje enviado

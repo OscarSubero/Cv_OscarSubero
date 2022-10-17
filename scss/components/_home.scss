@@ -1,0 +1,147 @@
+//Comienzo Estilos Main Inicio
+.main-home {
+    .inicio-container {
+        @include dimension(100%, auto);
+        background: linear-gradient(to right, #212121, #484848, #747474, #a3a3a3, #d4d4d4);
+        @include displayFlexA (wrap, center);
+        .inicio-container-1 {
+            @include dimension(100%, auto);
+            @include displayFlexA (wrap, flex-start);
+            .inicio-content-1 {
+                @include dimension(50%, auto);
+                @include displayFlexB (wrap, center, center);
+                .inicio-element{
+                    @include dimension(100%, auto);
+                    @include displayFlexB (wrap, center, center);
+                    align-content: center;
+                    .inicio-text{
+                        text-align: center;
+                        color: white;
+                        font-size: 1.5em;
+                    }
+                    @keyframes animLeftScrollText {
+                        0% {
+                            transform: translate(100%,0);
+                        }
+                        100% {
+                            transform: translate(0,0);
+                        }
+                    }
+                    @keyframes animRightScrollText {
+                        0% {
+                            transform: translate(-100%,0);
+                        }
+                        100% {
+                            transform: translate(0,0);
+                        }
+                    }
+                    .text-scroll-left {
+                        animation: animLeftScrollText 2s linear;  
+                        transform: translate3d(0, 0, 0);    
+                    }
+                    .text-scroll-right {
+                        animation: animRightScrollText 2s linear;  
+                        transform: translate3d(0, 0, 0); 
+                    }
+                    .imagen-container {     
+                        @include dimension(auto, auto);       
+                        max-height: 8em; 
+                        max-width: 8em;     
+                        margin: 2em 0 1em;
+                        border-radius: 1em;
+                    }
+                }
+            }
+        }
+        .inicio-container-2 {
+            @include dimension(100%, auto);
+            @include displayFlexA (wrap, center);
+            .inicio-content-2 {
+                @include dimension(100%, auto);
+                @include displayFlexB (wrap, center, center);
+                .imagen-container-main {
+                    @include dimension(auto, auto);
+                    padding: 2em;
+                    max-width: 22em;
+                    max-height: 22em;
+                }
+                h1 {
+                    width: auto;
+                    font-size: 7em;
+                    padding-bottom:6rem;
+                    left:0;
+                    color:white;
+                    text-align:center;
+                }    
+            }
+        }      
+    }
+    .about-container {
+        @include dimension(100%, auto);
+        @include backgroundImage(url(../image/17580.jpg));
+        background-color: white;
+        padding:9em 0;
+        display: flex;
+        flex-wrap: wrap;
+        .about-titulo {
+            @include dimension(100%, auto);
+            font-size: 3em;
+            font-weight: 100;
+            padding-bottom: 5rem;
+        }
+        .about-content {
+            @include dimension(100%, auto);
+            @include displayFlexC(wrap, space-around);
+            align-content: center;
+            .about-element {
+                width:20em;
+                h3 {
+                    font-size: 0.8em;
+                    color: rgb(173, 171, 171);
+                    padding: 2rem 0 1.5rem;
+                    line-height: 1.45;
+                }
+                div {
+                    border-bottom: 0.1em solid rgb(207, 205, 205);
+                }
+                h4 {
+                    padding-top: 2rem;
+                    font-size: 1.5em;
+                }
+                p {
+                    padding-top: 2em;
+                    line-height: 1.66;
+                }       
+            }
+        }
+        .resume-content {
+            @include dimension(100%, 8em);
+            @include displayFlexB (nowrap, center, center);
+            padding-top: 5rem;
+            .resume-content-element {
+                @include dimension(6em, 3em);
+                @include displayFlexB (nowrap, center, center);
+                background-color: black;
+                border-radius: 0.5em;
+                border: 0.5em solid rgb(46, 44, 44);
+                @keyframes reboot_move {
+                    from { transform: translate3d(0, 0, 0);}
+                    to { transform: translate3d(0, 0.3em, 0);}
+                }
+                &:hover {
+                    cursor: pointer;   
+                    animation: reboot_move 0.3s;
+                    animation-direction: alternate;
+                    animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+                    animation-iteration-count: 4;       
+                }
+                    a {
+                        text-align: center;
+                        font-size: 1em;
+                        color: white;
+                    }
+            }          
+        }
+    }
+}
+//Fin estilos Main Inicio

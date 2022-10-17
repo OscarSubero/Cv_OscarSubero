@@ -1,0 +1,169 @@
+// Comienzo Estilos Contacto
+.contact-main-container {
+    @include backgroundImage(url(../image/17580.jpg));
+    @include displayFlexB (wrap, center, space-around);
+    min-height: 90vh;
+    min-width: 100%;
+    .contact-title-container {
+        @include dimension(50%, auto);
+        background-color: black;
+        border-radius: 0.5em;
+        @include displayFlexB (wrap, center, space-around);
+        min-width: 20em;
+        padding: 1em 0 1em;
+        p {
+            color:white;
+            font-size: 3em;
+        }
+        .contact-imagen-container {
+            @include dimension(auto, auto);
+            max-width: 7em;
+            max-height: 7em;
+        }
+    }
+    .contact-form-container {
+        @include dimension(60%, auto);
+        min-width:20em;
+        @include backgroundBorder(#fcfcfc, 1px solid #D6D9DC, 0.5em);
+        @include displayFlexB (wrap, center, center);
+        padding:2em 0 2em;
+        margin-bottom: 2em;
+        .contact-form-detail {
+            @include dimension(100%, 100%);
+            @include displayFlexB (wrap, center, center);
+            .contact-form {
+                @include dimension(85%, 85%);
+                @include displayFlexB (nowrap, center, space-between);
+                flex-direction: column;
+                .contact-form-group {
+                    width: 100%;
+                    @include displayFlexB (wrap, center, space-between);
+                    .contact-form-name, .contact-form-email {
+                        width: 50%;
+                        min-width: 10em;
+                        @include displayFlexC(wrap, space-around);
+                        flex-direction: column;
+                        input {
+                            @include dimension(80%, 1.5em);
+                            min-width: 10em;
+                            @include backgroundBorder(#fff, 1px solid #D6D9DC, 0.5em);
+                            font-size: 1em;
+                            padding: 0.6em;
+                        }
+                    }
+                }
+                .contact-form-message {
+                    width: 100%;
+                    @include displayFlexC(nowrap, space-around);
+                    flex-direction: column;
+                    padding-top:1.5em;
+                    textarea {
+                        height: auto;
+                        @include backgroundBorder(#fff, 1px solid #D6D9DC, 0.5em);
+                        padding: 0.6em;
+                        font-size: 1rem;
+                    }
+                }
+                .contact-form-enviar {
+                    @include displayFlexB (wrap, center, space-evenly);
+                    @include dimension(100%, 100%);
+                    .contact-form-button {
+                        @include dimension(auto, 20%);
+                        @include displayFlexB (nowrap, center, center);
+                        padding-top: 1.5em;
+                        button {
+                            @include dimension(4.5em, 2.5em);
+                            @include backgroundBorder (black, 0.5em solid rgb(46, 44, 44), 0.5em);
+                            color:#fff;
+                            font-size: 1em;
+                            @keyframes reboot_move {
+                                from { transform: translate3d(0, 0, 0);}
+                                to { transform: translate3d(0, 0.3em, 0);}
+                            }
+                            &:hover {
+                                cursor: pointer;
+                                animation: reboot_move 0.3s;
+                                animation-direction: alternate;
+                                animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+                                // animation-iteration-count: infinite;
+                                animation-iteration-count: 4;
+                            }
+                        }
+                    }
+                    .contact-form-captcha {
+                        @include dimension(auto, 20%);
+                        @include displayFlexB (nowrap, center, center);
+                        margin-top: 1.5em;
+                        @include backgroundBorder(#fff, 1px solid #D6D9DC, 0.5em);
+                        background-color: black;
+                        color: white;
+                        font-weight: bold;
+                        #captcha {
+                            input{
+                                background: url(http://img3.uploadhouse.com/fileuploads/17737/17737011310213e71805ecf2292144cbbecf42ad.png) no-repeat scroll 0 0 transparent;
+                                margin:0 1em 0 1em;
+                                padding: 0;
+                                border: medium none;
+                                cursor: pointer;
+                                width: 1em;
+                              }
+                        }
+
+                        .captcha {
+                            @include dimension(80%, 1.5em);
+                            width: 8em;
+                            @include backgroundBorder(#fff, 1px solid #D6D9DC, 0.5em);
+                            font-size: 1em;
+                            font-weight: bold;
+                            padding: 0.6em;
+                            margin-right: 1em;
+                        }
+
+                          }
+
+
+                }
+
+                label {
+                    padding:0.5em;
+                }
+            }
+        }
+    }
+     .contact-data-container {
+        @include dimension(20%, auto);
+         min-width:18em;
+         @include backgroundBorder(#fcfcfc, 1px solid #D6D9DC, 0.5em);
+         @include displayFlexC(nowrap, center);
+         padding: 2em 1em 2em 1em;
+         margin-bottom: 8.5em;
+         .contact-data-detail {
+            @include displayFlexC(nowrap, space-around);
+            flex-direction: column;
+            div {
+                padding: 1em 0 1em;
+                line-height: 1.6;
+                h5 {
+                    color: black;
+                    font-size: 1em;
+                }
+                .contact-data-link {
+                    a {
+                        color: black;
+                        text-decoration:underline;
+                        &:hover {
+                            text-decoration: none;
+                            color: rgb(46, 44, 44);
+                            font-weight: bold;
+                        }
+                    }
+                    &:hover {
+                        transform: translateX(0.3em);
+                        transition: 0.3s;
+                    }
+                }
+             }
+         }
+     }
+}
+//Fin Estilos Contacto

@@ -1,0 +1,10 @@
+/*Components*/
+@import "../components/header";
+@import "../components/footer";
+@import "../components/home";
+@import "../components/contact";
+@import "../components/work";
+@import "../components/message";
+/*Base*/
+@import "mixins";
+@import "../mediaquery/query";

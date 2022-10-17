@@ -1,0 +1,66 @@
+// Celulares
+@media screen and (max-width: 500px) {  
+    .work-main-container {
+        .work-detail {
+            img {
+                width: 100%;
+            }
+            .description {
+                width: 31em;
+            }
+        }
+    }
+    footer {
+        justify-content: space-around;
+    } 
+}
+// Pantallas medianas
+@media screen and (max-width: 800px) {
+    .contact-main-container {
+        .contact-title-container {
+            p {
+                font-size: 1.5em;
+            }
+        }
+        .contact-form-container {
+            @include dimension(100%, auto);
+        }
+        .contact-data-container {
+             min-width:100%;
+        }
+    }
+}
+// Computadoras
+@media screen and (min-width: 501px) {
+    main {
+        .inicio-container {
+            .imagen-container {            
+                min-height: 8em; 
+                min-width: 8em;   
+            }
+        }
+    }
+    .work-main-container {
+        .work-detail {
+            .description {
+                width: 50%;
+            }
+            .img-item {
+                width:50%;
+                img {
+                    width:100%;
+                }
+            }
+        }
+    }
+    footer {
+        justify-content: space-between;
+        .footer-contact {
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+        .footer-social {
+            padding-right: 2em;
+        }   
+    }
+}
