@@ -61,7 +61,7 @@
                 @include displayFlexB (wrap, center, center);
                 .imagen-container-main {
                     @include dimension(auto, auto);
-                    padding: 2em;
+                    padding: 2em 0 2em 0;
                     max-width: 22em;
                     max-height: 22em;
                 }

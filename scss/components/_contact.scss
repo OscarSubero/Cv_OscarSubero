@@ -135,7 +135,7 @@
          min-width:18em;
          @include backgroundBorder(#fcfcfc, 1px solid #D6D9DC, 0.5em);
          @include displayFlexC(nowrap, center);
-         padding: 2em 1em 2em 1em;
+         padding: 1em 0 2em 0;
          margin-bottom: 8.5em;
          .contact-data-detail {
             @include displayFlexC(nowrap, space-around);

@@ -347,7 +347,7 @@ footer .footer-social-element:hover {
 .main-home .inicio-container .inicio-container-2 .inicio-content-2 .imagen-container-main {
   width: auto;
   height: auto;
-  padding: 2em;
+  padding: 2em 0 2em 0;
   max-width: 22em;
   max-height: 22em;
 }
@@ -642,7 +642,7 @@ footer .footer-social-element:hover {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  padding: 2em 1em 2em 1em;
+  padding: 1em 0 2em 0;
   margin-bottom: 8.5em;
 }
 .contact-main-container .contact-data-container .contact-data-detail {
